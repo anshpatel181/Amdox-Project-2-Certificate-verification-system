@@ -8,13 +8,8 @@ dotenv.config();
 connectDB();
 const app = express();
 
-app.use(
-  express.json({
-    verify: (req, res, buf) => {
-      req.rawBody = buf.toString();
-    },
-  })
-);
+app.use("/webhooks", express.raw({ type: "application/json" }));
+app.use(express.json())
 
 app.get("/", (req, res) => {
     res.send("Backend is running");
