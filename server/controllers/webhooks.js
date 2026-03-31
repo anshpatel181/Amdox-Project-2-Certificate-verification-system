@@ -5,6 +5,8 @@ export const clerkWebhooks = async (req, res) => {
   try {
     console.log("Webhook received!");
     // create a webhook svix instance
+    console.log("request body", req.body);
+    
     const webhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
 
     await webhook.verify(req.rawBody, {
