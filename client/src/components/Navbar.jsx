@@ -22,7 +22,7 @@ export const Navbar = () => {
             Verify
           </Link>
           {user ?
-            <div>
+            <div className="inline-flex">
               <UserButton />
             </div>
             :
