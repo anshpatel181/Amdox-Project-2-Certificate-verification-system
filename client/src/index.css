@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* must add following code if tailwind css is not working after installing it using vite */
+@source "./index.html";
+@source "./src/**/*.{js,ts,jsx,tsx}";
