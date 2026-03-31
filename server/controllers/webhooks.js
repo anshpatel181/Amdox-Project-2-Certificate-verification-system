@@ -1,6 +1,22 @@
-export const clerkWebhooks = (req, res) => {
+import { Webhook } from "svix"
+
+export const clerkWebhooks = async (req, res) => {
     try {   
-        res.send("This is webhook page");
+        
+        console.log("Webhook received!");
+        // create a webhook svix instance
+        const webhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
+
+        await webhook.verify(JSON.stringify(req.body), {
+            "svix-id": req.headers["svix-id"],
+            "svix-timestamp": req.headers["svix-timestamp"],
+            "svix-signature": req.headers["svix-signature"]
+        });
+
+        const {data, type} = req.body;
+        console.log("Data: ", data);
+        console.log("type: ", type);
+        
     } catch (error) {
         
     }
