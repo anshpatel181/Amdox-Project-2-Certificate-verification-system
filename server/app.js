@@ -2,6 +2,7 @@ import express from "express"
 import authRoutes from "./routes/authRoutes.js"
 import dotenv from "dotenv"
 import connectDB from "./config/db.js";
+import { clerkWebhooks } from "./controllers/webhooks.js";
 
 dotenv.config();
 connectDB();
