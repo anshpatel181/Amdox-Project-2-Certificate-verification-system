@@ -34,18 +34,19 @@ export const clerkWebhooks = async (req, res) => {
           name: data.first_name + " " + data.last_name,
         };
 
-        await User.findByIdAndUpdate(data.id, userData);
+        await User.findOneAndUpdate({clerkId: data.id}, userData);
         res.json({});
         break;
       }
 
       case "user.deleted": {
-        await User.findByIdAndDelete(data.id);
+        await User.findOneAndUpdate({clerkId: data.id});
         res.json({});
         break;
       }
 
       default:
+        res.json({ success: true, message: "Event ignored" });
         break;
     }
   } catch (error) {
