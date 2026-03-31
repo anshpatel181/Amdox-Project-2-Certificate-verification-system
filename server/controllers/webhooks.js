@@ -20,7 +20,8 @@ export const clerkWebhooks = async (req, res) => {
         const userData = {
           clerkId: data.id,
           email: data.email_addresses[0].email_address,
-          name: data.first_name + " " + data.last_name,
+          firstName: data.first_name,
+          lastName: data.last_name
         };
 
         await User.create(userData);
@@ -31,7 +32,8 @@ export const clerkWebhooks = async (req, res) => {
       case "user.updated": {
         const userData = {
           email: data.email_addresses[0].email_address,
-          name: data.first_name + " " + data.last_name,
+          firstName: data.first_name,
+          lastName: data.last_name
         };
 
         await User.findOneAndUpdate({clerkId: data.id}, userData);
