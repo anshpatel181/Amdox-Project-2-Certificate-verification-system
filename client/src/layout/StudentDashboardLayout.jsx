@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { Sidebar } from "../components/Sidebar";
 
-export const StudentDashboardLayout = () => {
+const StudentDashboardLayout = () => {
     const { user } = useUser();
 
     return (
@@ -15,4 +15,6 @@ export const StudentDashboardLayout = () => {
         </div>
     );
 };
+
+export default StudentDashboardLayout;
 

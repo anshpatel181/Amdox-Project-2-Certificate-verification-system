@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-export const AdminLogsPage = () => {
+const AdminLogsPage = () => {
 
     const { logs } = useContext(AppContext);
 
@@ -88,3 +88,5 @@ export const AdminLogsPage = () => {
         </div>
     );
 };
+
+export default AdminLogsPage;

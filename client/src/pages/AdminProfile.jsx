@@ -4,7 +4,7 @@ import { AppContext } from "../context/AppContext";
 import { FiMail, FiUser, FiShield, FiClock } from "react-icons/fi";
 import { EditProfileModal } from "../components/EditProfileModal";
 
-export const AdminProfilePage = () => {
+const AdminProfilePage = () => {
 
   const { user } = useUser();
   const { userData, certificateCount, logs, uploadedFiles } = useContext(AppContext);
@@ -147,3 +147,5 @@ export const AdminProfilePage = () => {
     </div>
   );
 };
+
+export default AdminProfilePage;

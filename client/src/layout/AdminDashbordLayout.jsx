@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../components/Sidebar";
 
-export const AdminDashboardLayout = () => {
+const AdminDashboardLayout = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
@@ -11,3 +11,5 @@ export const AdminDashboardLayout = () => {
     </div>
   );
 };
+
+export default AdminDashboardLayout;

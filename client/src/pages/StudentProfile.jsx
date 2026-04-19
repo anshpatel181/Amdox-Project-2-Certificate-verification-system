@@ -2,7 +2,7 @@ import { useUser } from "@clerk/clerk-react";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-export const StudentProfilePage = () => {
+const StudentProfilePage = () => {
   const { user } = useUser();
   const { certificates } = useContext(AppContext);
 
@@ -152,3 +152,5 @@ export const StudentProfilePage = () => {
     </div>
   );
 };
+
+export default StudentProfilePage;

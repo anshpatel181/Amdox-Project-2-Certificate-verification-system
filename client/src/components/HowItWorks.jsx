@@ -18,7 +18,7 @@ const steps = [
   }
 ];
 
-const HowItWorks = () => {
+export const HowItWorks = () => {
   return (
     <section className="py-24 bg-linear-to-br from-gray-50 to-indigo-50">
 

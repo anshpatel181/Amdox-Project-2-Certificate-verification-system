@@ -1,11 +1,21 @@
 import { Link } from "react-router-dom";
-import { useUser, UserButton, SignInButton } from "@clerk/clerk-react";
-import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { useUser } from "@clerk/clerk-react";
+import { lazy, Suspense } from "react";
+
+const UserButton = lazy(() =>
+  import("@clerk/clerk-react").then((mod) => ({
+    default: mod.UserButton,
+  }))
+);
+
+const SignInButton = lazy(() =>
+  import("@clerk/clerk-react").then((mod) => ({
+    default: mod.SignInButton,
+  }))
+);
 
 export const Navbar = () => {
   const { isSignedIn } = useUser();
-  const {userData} = useContext(AppContext)
 
   return (
     <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -32,17 +42,17 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-
-          {isSignedIn ? (
-            <UserButton afterSignOutUrl="/" />
-          ) : (
-            <SignInButton mode="modal">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                Login
-              </button>
-            </SignInButton>
-          )}
-
+          <Suspense fallback={<div className="w-10 h-10"></div>}>
+            {isSignedIn ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <SignInButton mode="modal">
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                  Login
+                </button>
+              </SignInButton>
+            )}
+          </Suspense>
         </div>
       </div>
     </nav>

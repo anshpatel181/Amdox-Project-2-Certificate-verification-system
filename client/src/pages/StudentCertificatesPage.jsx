@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 
-export const StudentCertificates = () => {
+const StudentCertificates = () => {
 
     const { certificates, loading } = useContext(AppContext)
     const navigate = useNavigate();
@@ -106,3 +106,5 @@ export const StudentCertificates = () => {
         </div>
     );
 };
+
+export default StudentCertificates;

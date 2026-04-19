@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
-const Footer = () => {
+export const Footer = () => {
+
+  const { isSignedIn } = useUser();  
+  
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -19,7 +23,14 @@ const Footer = () => {
             <div className="mt-3 flex flex-col gap-2">
               <Link to="/" className="hover:text-white transition">Home</Link>
               <Link to="/verify" className="hover:text-white transition">Verify</Link>
-              <Link to="/login" className="hover:text-white transition">Login</Link>
+
+              {
+                isSignedIn ? (
+                  <Link to="/dashboard" className="hover:text-white transition">Dashboard</Link>
+                ) : (
+                  <Link to="/login" className="hover:text-white transition">Login</Link>
+                )
+              }
             </div>
           </div>
 
@@ -43,5 +54,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

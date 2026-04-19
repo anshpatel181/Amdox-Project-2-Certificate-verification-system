@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 
-export const StudentDashboard = () => {
+const StudentDashboard = () => {
 
   const {certificates} = useContext(AppContext)
   const navigate = useNavigate();
@@ -82,4 +82,6 @@ export const StudentDashboard = () => {
     </div>
   );
 };
+
+export default StudentDashboard;
 

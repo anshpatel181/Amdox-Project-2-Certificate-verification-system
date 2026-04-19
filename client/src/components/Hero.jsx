@@ -1,6 +1,6 @@
 import { SearchBox } from "./SearchBox";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <section className="relative py-28 overflow-hidden bg-linear-to-br from-indigo-50 via-white to-purple-100">
       
@@ -34,4 +34,3 @@ const Hero = () => {
   );
 };
 
-export default Hero;

@@ -1,6 +1,6 @@
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import HowItWorks from '../components/HowItWorks';
+import { Hero } from '../components/Hero';
+import { Features } from '../components/Features';
+import { HowItWorks } from '../components/HowItWorks';
 
 const Home = () => {
   return (
@@ -12,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home

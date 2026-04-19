@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AppContext } from "../context/AppContext";
 
-export const VerifyCertificate = () => {
+const VerifyCertificate = () => {
 
   const BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const { setVerifyCount } = useContext(AppContext)
@@ -185,3 +185,5 @@ export const VerifyCertificate = () => {
     </div>
   );
 };
+
+export default VerifyCertificate;

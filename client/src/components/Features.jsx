@@ -18,7 +18,7 @@ const features = [
   }
 ];
 
-const Features = () => {
+export const Features = () => {
   return (
     <section className="py-24 bg-white">
 
@@ -62,4 +62,3 @@ const Features = () => {
   );
 };
 
-export default Features;

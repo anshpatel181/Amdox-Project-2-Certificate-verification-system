@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AppContext } from "../context/AppContext";
 
-export const AdminUpload = () => {
+const AdminUpload = () => {
 
   const BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const { uploadedFileData, uploadedFiles } = useContext(AppContext);
@@ -236,3 +236,5 @@ export const AdminUpload = () => {
     </div>
   );
 };
+
+export default AdminUpload;
